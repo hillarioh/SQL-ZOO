@@ -13,3 +13,9 @@ SELECT name, area
 FROM world
 WHERE area BETWEEN 200000 AND 250000;
 
+-- Query to Show the name and population for France, Germany, Italy
+SELECT name, population
+FROM world
+WHERE name IN ('France','Germany','Italy');
+
+
