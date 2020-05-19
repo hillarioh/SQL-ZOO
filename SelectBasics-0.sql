@@ -18,4 +18,30 @@ SELECT name, population
 FROM world
 WHERE name IN ('France','Germany','Italy');
 
+-- Query to Show year, subject, and name of people who won a 'Medicine' prize 
+-- in an early year (before 1910, not including 1910) together
+-- with winners of a 'Literature' prize in a later year (after 2004, including 2004)
+SELECT *
+FROM nobel
+WHERE (yr<1910 AND subject='medicine') OR (yr>2003 AND subject='literature')
+
+--Query to Find all details of the prize won by PETER GRÜNBERG
+SELECT *
+FROM nobel
+WHERE winner = 'PETER GRÜNBERG'
+
+-- Query to Find all details of the prize won by EUGENE O'NEILL Escaping single quotes
+-- You can't put a single quote in a quote string directly. You can use two
+-- single quotes within a quoted string.
+SELECT *
+FROM nobel
+WHERE winner = 'EUGENE O''NEILL';
+
+-- Query to show list the winners, year and subject where the winner starts
+-- with Sir. Show the the most recent first, then by name order.
+SELECT winner, yr, subject
+FROM nobel
+WHERE winner LIKE 'Sir%'
+ORDER BY yr DESC
+
 
